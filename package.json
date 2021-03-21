@@ -1,0 +1,21 @@
+{
+  "name": "dockerize-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node main",
+    "dev": "nodemon main",
+    "docker-compose-down": "docker-compose -f './docker-compose.yml' down",
+    "docker-compose-up:dev": "docker-compose -f './docker-compose.yml' up -d --build api-dev",
+    "docker:dev": "npm run docker-compose-down; npm run docker-compose-up:dev; docker-compose logs -f api-dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
